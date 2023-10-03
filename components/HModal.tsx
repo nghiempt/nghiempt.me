@@ -99,7 +99,7 @@ const HModal = ({
           <div className="self-stretch shrink-0 flex w-full justify-between items-center gap-x-[0px] bg-[#00000000]"></div>
         </div>
       }
-      width={getWidthScreen() > 768 ? getWidthScreen()/2 : getWidthScreen()/1.5}
+      width={1000}
     >
       <div className="self-stretch shrink-0 flex flex-col items-center gap-y-[16px]">
         <div className="self-stretch shrink-0 flex items-center gap-x-[24px] pl-2 pr-2">
@@ -129,9 +129,9 @@ const HModal = ({
             </div>
           </div>
 
-            <div className="w-full flex flex-wrap items-center gap-y-[21px] justify-center mt-5 mb-10">
+            <div className="w-full flex flex-wrap items-center gap-y-[21px] flex-start mt-5 mb-10">
               {filterAppByCategoryID(category?.cat_id).map((app: any, index: any) => (
-                <div key={index} className='pr-3 pl-3'>
+                <div key={index} className='w-[95px]'>
                   <div
                   
                   className="flex items-center justify-center flex-col cursor-pointer hover:opacity-60"
