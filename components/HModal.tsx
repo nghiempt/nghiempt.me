@@ -46,7 +46,7 @@ const HModal = ({
 
   function renderItem(item: any) {
     return (
-      <div className="flex justify-start items-center w-full border-b border-gray-100 ">
+      <div className="flex justify-start items-center border-b border-gray-100">
         <div className="flex flex-row gap-3 justify-center items-center pb-[5px]">
           <Image
             src={item?.app_logo}
@@ -83,6 +83,11 @@ const HModal = ({
     setSearchValue({ result: result as never[], list: searchValue.list });
   }
 
+  const getWidthScreen = () => {
+    console.log('window.innerWidth', window.innerWidth);
+    return window.innerWidth;
+  };
+
   return (
     <Modal
       visible={isVisible}
@@ -94,7 +99,7 @@ const HModal = ({
           <div className="self-stretch shrink-0 flex w-full justify-between items-center gap-x-[0px] bg-[#00000000]"></div>
         </div>
       }
-      width={1000}
+      width={getWidthScreen() > 768 ? getWidthScreen()/2 : getWidthScreen()/1.5}
     >
       <div className="self-stretch shrink-0 flex flex-col items-center gap-y-[16px]">
         <div className="self-stretch shrink-0 flex items-center gap-x-[24px] pl-2 pr-2">
@@ -124,9 +129,9 @@ const HModal = ({
             </div>
           </div>
 
-            <div className="w-full flex flex-wrap items-center gap-y-[21px] flex-start mt-5 mb-10">
+            <div className="w-full flex flex-wrap items-center gap-y-[21px] justify-center mt-5 mb-10">
               {filterAppByCategoryID(category?.cat_id).map((app: any, index: any) => (
-                <div key={index} className='w-[95px]'>
+                <div key={index} className='pr-3 pl-3'>
                   <div
                   
                   className="flex items-center justify-center flex-col cursor-pointer hover:opacity-60"
