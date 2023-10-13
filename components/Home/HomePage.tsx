@@ -10,9 +10,9 @@ export const HomePage = () => {
   let width = screen.width;
 
   const initial = async () => {
-    const responseApp = await fetch('http://localhost:8088/napis-apps');
+    const responseApp = await fetch('http://nghiempt.me:8088/napis-apps');
     const responseCategory = await fetch(
-      'http://localhost:8088/napis-categories'
+      'http://nghiempt.me:8088/napis-categories'
     );
     const dataApp = await responseApp.json();
     const dataCategory = await responseCategory.json();
