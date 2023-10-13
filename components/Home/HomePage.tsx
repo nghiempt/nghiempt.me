@@ -7,7 +7,7 @@ export const HomePage = () => {
   const [listApp, setListApp] = useState([]);
   const [listCategory, setListCategory] = useState([]);
   const [categorySelected, setCategorySelected] = useState('');
-  let width = screen.width;
+  // let width = screen.width;
 
   const initial = async () => {
     const responseApp = await fetch('https://napis.onrender.com/napis-apps');
@@ -55,7 +55,7 @@ export const HomePage = () => {
 
   useEffect(() => {}, [listApp, listCategory, categorySelected]);
 
-  if (width < 768) {
+  if (false) {
     return (
       <div className="flex flex-col h-screen w-full">
         <div>
