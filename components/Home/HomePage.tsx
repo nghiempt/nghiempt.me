@@ -2,22 +2,23 @@
 
 import React, {useEffect, useState} from 'react';
 import {Image, Typography} from '@douyinfe/semi-ui';
+import { fake_apps, fake_categories } from '@/utils/fake';
 
 export const HomePage = () => {
-  const [listApp, setListApp] = useState([]);
-  const [listCategory, setListCategory] = useState([]);
+  const [listApp, setListApp] = useState<any>([]);
+  const [listCategory, setListCategory] = useState<any>([]);
   const [categorySelected, setCategorySelected] = useState('');
   let width = screen.width;
 
   const initial = async () => {
-    const responseApp = await fetch('https://napis.onrender.com/napis-apps');
-    const responseCategory = await fetch(
-      'https://napis.onrender.com/napis-categories'
-    );
-    const dataApp = await responseApp.json();
-    const dataCategory = await responseCategory.json();
-    setListApp(dataApp);
-    setListCategory(dataCategory);
+    // const responseApp = await fetch('https://napis.onrender.com/napis-apps');
+    // const responseCategory = await fetch(
+    //   'https://napis.onrender.com/napis-categories'
+    // );
+    // const dataApp = await responseApp.json();
+    // const dataCategory = await responseCategory.json();
+    setListApp(fake_apps);
+    setListCategory(fake_categories);
   };
 
   const filterPin = (list: any) => {
